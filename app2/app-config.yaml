@@ -47,6 +47,10 @@ integrations:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
+  azure:
+    - host: dev.azure.com
+      credentials:
+        - personalAccessToken: hogtw7ssyhf3cbtecdnvcasr7vd2cyapgtop36r52wzlg3ho6tvq
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -81,6 +85,10 @@ auth:
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
             - resolver: usernameMatchingUserEntityName
 
+azureDevOps:
+  host: dev.azure.com
+  organization: cpinedao
+  
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 

@@ -7,6 +7,17 @@ metadata:
 spec:
   owner: guests
 ---
+# Example catalog-info.yaml entity definition file
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: azureDevops
+  annotations:
+    dev.azure.com/project-repo: AlkostoTest/AlkostoTest
+spec:
+  type: service
+  # ...
+---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
 apiVersion: backstage.io/v1alpha1
 kind: Component

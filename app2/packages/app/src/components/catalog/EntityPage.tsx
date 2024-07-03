@@ -53,6 +53,13 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import {
+  EntityAzurePullRequestsContent,
+  EntityAzurePipelinesContent,
+  isAzureDevOpsAvailable,
+} from '@backstage-community/plugin-azure-devops';
+
+
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -73,7 +80,9 @@ const cicdContent = (
         <EntityGithubActionsContent />
       </EntitySwitch.Case>
      */}
-
+    <EntitySwitch.Case>
+        <EntityAzurePipelinesContent defaultLimit={25} />
+    </EntitySwitch.Case>
     <EntitySwitch.Case>
       <EmptyState
         title="No CI/CD available for this entity"
@@ -174,6 +183,9 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
+    </EntityLayout.Route>
+    <EntityLayout.Route path="/pull-requests" title="Pull Requests">
+      <EntityAzurePullRequestsContent defaultLimit={25} />
     </EntityLayout.Route>
   </EntityLayout>
 );
